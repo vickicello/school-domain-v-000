@@ -2,22 +2,32 @@ class School
 
   attr_accessor :roster
   attr_reader :name, :roster
-  
+
   def initialize(name, roster = {})
     @name = name
     @roster = roster
   end
 
-  def name
-    @name = name
+  def add_student(name, num)
+    if @roster.keys.include?(num)
+      @roster[num] << name
+    else
+      @roster[num] = []
+      @roster[num] << name
+    end
+    @roster
   end
 
-  def name
-    @name
+  def grade(num)
+    @roster[num]
   end
 
-  def roster
-    
+  def sort
+    @roster.each { |i, e| e.sort! }
+    @roster
+  end
+end
+
 
 
 end
