@@ -15,6 +15,7 @@ class School
       @roster[num] = []
       @roster[num] << name
     end
+    end
     @roster
   end
 
